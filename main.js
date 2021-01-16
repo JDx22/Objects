@@ -5,7 +5,11 @@ const reservations = {
   
 const name = prompt('Please enter the name for your reservation');
 if (reservations[name]==undefined)
+{
   alert("You have no reservation");
+  reservations[name] = { claimed: true };
+  console.log(reservations);
+}
 else if (reservations[name].claimed)
   alert("Hmm, someone already claimed this reservation");
 else 
